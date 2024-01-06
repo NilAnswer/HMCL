@@ -88,15 +88,6 @@ public abstract class SettingsView extends StackPane {
                         row.setVgrow(Priority.SOMETIMES);
                         gridPane.getRowConstraints().setAll(row);
 
-                        {
-                            Label label = new Label(i18n("sponsor.hmcl"));
-                            label.setWrapText(true);
-                            label.setTextAlignment(TextAlignment.JUSTIFY);
-                            GridPane.setRowIndex(label, 0);
-                            GridPane.setColumnIndex(label, 0);
-                            gridPane.getChildren().add(label);
-                        }
-
                         sponsorPane.getChildren().setAll(gridPane);
                         settingsPane.getContent().add(sponsorPane);
                     }
