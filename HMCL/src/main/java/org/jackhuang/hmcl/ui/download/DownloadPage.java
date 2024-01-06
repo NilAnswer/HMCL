@@ -109,37 +109,6 @@ public class DownloadPage extends DecoratorAnimatedPage implements DecoratorPage
                         item.setLeftGraphic(wrap(SVG.GAMEPAD));
                         item.activeProperty().bind(tab.getSelectionModel().selectedItemProperty().isEqualTo(newGameTab));
                         item.setOnAction(e -> tab.select(newGameTab));
-                    })
-                    .addNavigationDrawerItem(settingsItem -> {
-                        settingsItem.setTitle(i18n("modpack"));
-                        settingsItem.setLeftGraphic(wrap(SVG.PACK));
-                        settingsItem.activeProperty().bind(tab.getSelectionModel().selectedItemProperty().isEqualTo(modpackTab));
-                        settingsItem.setOnAction(e -> tab.select(modpackTab));
-                    })
-                    .startCategory(i18n("download.content"))
-                    .addNavigationDrawerItem(item -> {
-                        item.setTitle(i18n("mods"));
-                        item.setLeftGraphic(wrap(SVG.PUZZLE));
-                        item.activeProperty().bind(tab.getSelectionModel().selectedItemProperty().isEqualTo(modTab));
-                        item.setOnAction(e -> tab.select(modTab));
-                    })
-                    .addNavigationDrawerItem(item -> {
-                        item.setTitle(i18n("resourcepack"));
-                        item.setLeftGraphic(wrap(SVG.TEXTURE_BOX));
-                        item.activeProperty().bind(tab.getSelectionModel().selectedItemProperty().isEqualTo(resourcePackTab));
-                        item.setOnAction(e -> tab.select(resourcePackTab));
-                    })
-//                    .addNavigationDrawerItem(item -> {
-//                        item.setTitle(i18n("download.curseforge.customization"));
-//                        item.setLeftGraphic(wrap(SVG::script));
-//                        item.activeProperty().bind(tab.getSelectionModel().selectedItemProperty().isEqualTo(customizationTab));
-//                        item.setOnAction(e -> selectTabIfCurseForgeAvailable(customizationTab));
-//                    })
-                    .addNavigationDrawerItem(item -> {
-                        item.setTitle(i18n("world"));
-                        item.setLeftGraphic(wrap(SVG.EARTH));
-                        item.activeProperty().bind(tab.getSelectionModel().selectedItemProperty().isEqualTo(worldTab));
-                        item.setOnAction(e -> selectTabIfCurseForgeAvailable(worldTab));
                     });
             FXUtils.setLimitWidth(sideBar, 200);
             setLeft(sideBar);
