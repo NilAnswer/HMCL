@@ -173,21 +173,6 @@ public final class RemoteResourceManager {
     private static final Map<String, RemoteResourceKey> keys = new ConcurrentHashMap<>();
 
     public static void init() {
-        Task.<Map<String, Map<String, Map<String, RemoteResource>>>>supplyAsync(() ->
-                IntegrityChecker.isSelfVerified() ? HttpRequest.GET(Metadata.RESOURCE_UPDATE_URL).getJson(
-                        new TypeToken<Map<String, Map<String, Map<String, RemoteResource>>>>() {
-                        }.getType()
-                ) : null
-        ).whenComplete(Schedulers.defaultScheduler(), (result, exception) -> {
-            if (exception == null && result != null) {
-                remoteResources.clear();
-                remoteResources.putAll(result);
-
-                for (RemoteResourceKey key : keys.values()) {
-                    key.downloadRemoteResourceIfNecessary();
-                }
-            }
-        }).start();
     }
 
     public static void register() {
