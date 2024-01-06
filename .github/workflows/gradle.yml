@@ -18,9 +18,10 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
       env:
-        MICROSOFT_AUTH_ID: ${{ secrets.MICROSOFT_AUTH_ID }}
-        MICROSOFT_AUTH_SECRET: ${{ secrets.MICROSOFT_AUTH_SECRET }}
-        CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+        VERSION_TYPE: "official"
+        MICROSOFT_AUTH_ID: "6a3728d6-27a3-4180-99bb-479895b8f88e"
+        MICROSOFT_AUTH_SECRET: "dR.50SWwVez4-PQOF2-e_2GHmC~4Xl-p4p"
+        CURSEFORGE_API_KEY: "$2a$10$o8pygPrhvKBHuuh5imL2W.LCNFhB15zBYAExXx/TqTx/Z"
     - name: Get short SHA
       run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
     - name: Upload Artifacts
