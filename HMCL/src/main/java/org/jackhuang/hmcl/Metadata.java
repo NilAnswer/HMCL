@@ -71,14 +71,14 @@ public final class Metadata {
     }
 
     public static boolean isStable() {
-        return "stable".equals(BUILD_CHANNEL);
+        return true;
     }
 
     public static boolean isDev() {
-        return "dev".equals(BUILD_CHANNEL);
+        return false;
     }
 
     public static boolean isNightly() {
-        return !isStable() && !isDev();
+        return false;
     }
 }
