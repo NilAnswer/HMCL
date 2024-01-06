@@ -147,25 +147,6 @@ public class AccountListItemSkin extends SkinBase<AccountListItem> {
         spinnerRefresh.setContent(btnRefresh);
         right.getChildren().add(spinnerRefresh);
 
-        JFXButton btnUpload = new JFXButton();
-        SpinnerPane spinnerUpload = new SpinnerPane();
-        btnUpload.setOnMouseClicked(e -> {
-            Task<?> uploadTask = skinnable.uploadSkin();
-            if (uploadTask != null) {
-                spinnerUpload.showSpinner();
-                uploadTask
-                        .whenComplete(Schedulers.javafx(), ex -> spinnerUpload.hideSpinner())
-                        .start();
-            }
-        });
-        btnUpload.getStyleClass().add("toggle-icon4");
-        btnUpload.setGraphic(SVG.HANGER.createIcon(Theme.blackFill(), -1, -1));
-        runInFX(() -> FXUtils.installFastTooltip(btnUpload, i18n("account.skin.upload")));
-        spinnerUpload.managedProperty().bind(spinnerUpload.visibleProperty());
-        spinnerUpload.visibleProperty().bind(skinnable.canUploadSkin());
-        spinnerUpload.setContent(btnUpload);
-        spinnerUpload.getStyleClass().add("small-spinner-pane");
-        right.getChildren().add(spinnerUpload);
 
         JFXButton btnCopyUUID = new JFXButton();
         SpinnerPane spinnerCopyUUID = new SpinnerPane();
