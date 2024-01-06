@@ -101,19 +101,6 @@ public class DownloadPage extends DecoratorAnimatedPage implements DecoratorPage
             transitionPane.setContent(newValue.getNode(), ContainerAnimations.FADE.getAnimationProducer());
         });
 
-        {
-            AdvancedListBox sideBar = new AdvancedListBox()
-                    .startCategory(i18n("download.game"))
-                    .addNavigationDrawerItem(item -> {
-                        item.setTitle(i18n("game"));
-                        item.setLeftGraphic(wrap(SVG.GAMEPAD));
-                        item.activeProperty().bind(tab.getSelectionModel().selectedItemProperty().isEqualTo(newGameTab));
-                        item.setOnAction(e -> tab.select(newGameTab));
-                    });
-            FXUtils.setLimitWidth(sideBar, 200);
-            setLeft(sideBar);
-        }
-
         setCenter(transitionPane);
     }
 
