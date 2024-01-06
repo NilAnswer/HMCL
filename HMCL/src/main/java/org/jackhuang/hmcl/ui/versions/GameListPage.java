@@ -93,12 +93,6 @@ public class GameListPage extends DecoratorAnimatedPage implements DecoratorPage
                         installNewGameItem.setOnAction(e -> Versions.addNewGame());
                         runInFX(() -> FXUtils.installFastTooltip(installNewGameItem, i18n("install.new_game")));
                     })
-                    .addNavigationDrawerItem(installModpackItem -> {
-                        installModpackItem.setTitle(i18n("install.modpack"));
-                        installModpackItem.setLeftGraphic(VersionPage.wrap(SVG.PACK));
-                        installModpackItem.setOnAction(e -> Versions.importModpack());
-                        runInFX(() -> FXUtils.installFastTooltip(installModpackItem, i18n("install.modpack")));
-                    })
                     .addNavigationDrawerItem(refreshItem -> {
                         refreshItem.setTitle(i18n("button.refresh"));
                         refreshItem.setLeftGraphic(VersionPage.wrap(SVG.REFRESH));
