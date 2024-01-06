@@ -43,7 +43,7 @@ val versionType = System.getenv("VERSION_TYPE") ?: if (isOfficial) "nightly" els
 
 val microsoftAuthId = System.getenv("MICROSOFT_AUTH_ID") ?: "6a3728d6-27a3-4180-99bb-479895b8f88e"
 val microsoftAuthSecret = System.getenv("MICROSOFT_AUTH_SECRET") ?: "dR.50SWwVez4-PQOF2-e_2GHmC~4Xl-p4p"
-val curseForgeApiKey = System.getenv("CURSEFORGE_API_KEY") ?: "$2a$10$o8pygPrhvKBHuuh5imL2W.LCNFhB15zBYAExXx/TqTx/Z"
+val curseForgeApiKey = System.getenv("CURSEFORGE_API_KEY") ?: ""
 
 version = "$versionRoot.$buildNumber"
 
