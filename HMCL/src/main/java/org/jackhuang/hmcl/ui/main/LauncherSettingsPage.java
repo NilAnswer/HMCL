@@ -46,7 +46,6 @@ public class LauncherSettingsPage extends DecoratorAnimatedPage implements Decor
     private final TabHeader.Tab<HelpPage> helpTab = new TabHeader.Tab<>("helpPage");
     private final TabHeader.Tab<AboutPage> aboutTab = new TabHeader.Tab<>("aboutPage");
     private final TabHeader.Tab<FeedbackPage> feedbackTab = new TabHeader.Tab<>("feedbackPage");
-    private final TabHeader.Tab<SponsorPage> sponsorTab = new TabHeader.Tab<>("sponsorPage");
     private final TransitionPane transitionPane = new TransitionPane();
 
     public LauncherSettingsPage() {
@@ -56,9 +55,8 @@ public class LauncherSettingsPage extends DecoratorAnimatedPage implements Decor
         downloadTab.setNodeSupplier(DownloadSettingsPage::new);
         helpTab.setNodeSupplier(HelpPage::new);
         feedbackTab.setNodeSupplier(FeedbackPage::new);
-        sponsorTab.setNodeSupplier(SponsorPage::new);
         aboutTab.setNodeSupplier(AboutPage::new);
-        tab = new TabHeader(gameTab, settingsTab, personalizationTab, downloadTab, helpTab, feedbackTab, sponsorTab, aboutTab);
+        tab = new TabHeader(gameTab, settingsTab, personalizationTab, downloadTab, helpTab, feedbackTab, aboutTab);
 
         tab.select(gameTab);
         gameTab.initializeIfNeeded();
@@ -94,31 +92,6 @@ public class LauncherSettingsPage extends DecoratorAnimatedPage implements Decor
                         downloadItem.setLeftGraphic(wrap(SVG.DOWNLOAD_OUTLINE));
                         downloadItem.activeProperty().bind(tab.getSelectionModel().selectedItemProperty().isEqualTo(downloadTab));
                         downloadItem.setOnAction(e -> tab.select(downloadTab));
-                    })
-                    .startCategory(i18n("help"))
-                    .addNavigationDrawerItem(helpItem -> {
-                        helpItem.setTitle(i18n("help"));
-                        helpItem.setLeftGraphic(wrap(SVG.HELP_CIRCLE_OUTLINE));
-                        helpItem.activeProperty().bind(tab.getSelectionModel().selectedItemProperty().isEqualTo(helpTab));
-                        helpItem.setOnAction(e -> tab.select(helpTab));
-                    })
-                    .addNavigationDrawerItem(feedbackItem -> {
-                        feedbackItem.setTitle(i18n("feedback"));
-                        feedbackItem.setLeftGraphic(wrap(SVG.MESSAGE_ALERT_OUTLINE));
-                        feedbackItem.activeProperty().bind(tab.getSelectionModel().selectedItemProperty().isEqualTo(feedbackTab));
-                        feedbackItem.setOnAction(e -> tab.select(feedbackTab));
-                    })
-                    .addNavigationDrawerItem(sponsorItem -> {
-                        sponsorItem.setTitle(i18n("sponsor"));
-                        sponsorItem.setLeftGraphic(wrap(SVG.HAND_HEAR_OUTLINE));
-                        sponsorItem.activeProperty().bind(tab.getSelectionModel().selectedItemProperty().isEqualTo(sponsorTab));
-                        sponsorItem.setOnAction(e -> tab.select(sponsorTab));
-                    })
-                    .addNavigationDrawerItem(aboutItem -> {
-                        aboutItem.setTitle(i18n("about"));
-                        aboutItem.setLeftGraphic(wrap(SVG.INFORMATION_OUTLINE));
-                        aboutItem.activeProperty().bind(tab.getSelectionModel().selectedItemProperty().isEqualTo(aboutTab));
-                        aboutItem.setOnAction(e -> tab.select(aboutTab));
                     });
             FXUtils.setLimitWidth(sideBar, 200);
             setLeft(sideBar);
