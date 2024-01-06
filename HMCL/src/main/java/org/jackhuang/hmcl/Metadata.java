@@ -35,7 +35,7 @@ public final class Metadata {
     public static final String VERSION = System.getProperty("hmcl.version.override", "3.5.5");
 
     public static final String TITLE = NAME + " " + VERSION;
-    public static final String FULL_TITLE = FULL_NAME + " v" + VERSION;
+    public static final String FULL_TITLE = "我的世界";
 
     // hmcl.update_source.override is deprecated. If it is used, a warning message will be printed in org.jackhuang.hmcl.Launcher.main .
     public static final String HMCL_UPDATE_URL = System.getProperty("hmcl.hmcl_update_source.override", System.getProperty("hmcl.update_source.override", "https://hmcl.huangyuhui.net/api/update_link"));
