@@ -100,7 +100,11 @@ public class DownloadPage extends DecoratorAnimatedPage implements DecoratorPage
         FXUtils.onChangeAndOperate(tab.getSelectionModel().selectedItemProperty(), newValue -> {
             transitionPane.setContent(newValue.getNode(), ContainerAnimations.FADE.getAnimationProducer());
         });
-
+        {
+            AdvancedListBox sideBar = new AdvancedListBox();
+            FXUtils.setLimitWidth(sideBar, 0);
+            setLeft(sideBar);
+        }
         setCenter(transitionPane);
     }
 
