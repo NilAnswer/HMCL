@@ -46,7 +46,7 @@ public final class Metadata {
     public static final String PUBLISH_URL = "https://www.mcbbs.net/thread-142335-1-1.html";
     public static final String EULA_URL = "https://docs.hmcl.net/eula/hmcl.html";
 
-    public static final String BUILD_CHANNEL = JarUtils.getManifestAttribute("Build-Channel", "nightly");
+    public static final String BUILD_CHANNEL = JarUtils.getManifestAttribute("Build-Channel", "stable");
     public static final String GITHUB_SHA = JarUtils.getManifestAttribute("GitHub-SHA", null);
 
     public static final Path MINECRAFT_DIRECTORY = OperatingSystem.getWorkingDirectory("minecraft");
