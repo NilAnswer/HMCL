@@ -69,7 +69,7 @@ public final class DownloadProviders {
 
         MOJANG = new MojangDownloadProvider();
         BMCLAPI = new BMCLAPIDownloadProvider(bmclapiRoot);
-        MCBBS = new BMCLAPIDownloadProvider("https://error404-download.error404-mcbbs.net");
+        MCBBS = new BMCLAPIDownloadProvider("https://bmclapi2.bangbang93.com");
         rawProviders = mapOf(
                 pair("mojang", MOJANG),
                 pair("bmclapi", BMCLAPI),
